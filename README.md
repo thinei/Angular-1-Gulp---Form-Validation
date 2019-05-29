@@ -11,7 +11,7 @@
  
  - cd Angular-1-Gulp---Form-Validation
  
- - npm install && bower install
+ - **npm install && bower install**
  
  
  ## Start and run 
