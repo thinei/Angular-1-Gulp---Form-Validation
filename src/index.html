@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html ng-app="angularApp">
+  <head>
+    <meta charset="utf-8" />
+    <title>Angular JS Form Validation</title>
+    <link
+      rel="stylesheet"
+      href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css"
+    />
+    <script src="js/app.js"></script>
+  </head>
+  <body ng-controller="angularCtrl" style="background-color:cornsilk">
+    <div
+      class="col"
+      style="padding:100px;margin:200px;border:3px; border-style:solid; border-color:chocolate; "
+    >
+      <div class="col-sm-6">
+        <!-- Name Form Validation start -->
+        <form name="firstnameForm" role="form" novalidate>
+          <label for="title1" style="font-size: 20px;color: brown"
+            >Name Form Validation</label
+          ><br /><br />
+          <div class="row">
+            <div class="col-md-4">
+              <label for="firstName">First Name:</label>
+            </div>
+            <div class="col-md-8">
+              <input
+                type="text"
+                name="firstName"
+                data-ng-model="firstName"
+                required
+              />
+              <div
+                class="error"
+                ng-show="firstnameForm.firstName.$dirty && firstnameForm.firstName.$invalid"
+              >
+                <small
+                  class="error"
+                  ng-show="firstnameForm.firstName.$error.required"
+                  >First Name is required.</small
+                >
+              </div>
+            </div>
+          </div>
+          <br />
+        </form>
+
+        <form name="lastnameForm" role="form" novalidate>
+          <div class="row">
+            <div class="col-md-4">
+              <label for="lastName">Last Name:</label>
+            </div>
+            <div class="col-md-8">
+              <input type="text" name="lastName" ng-model="lastName" required />
+              <div
+                class="error"
+                ng-show="lastnameForm.lastName.$dirty && lastnameForm.lastName.$invalid"
+              >
+                <small
+                  class="error"
+                  ng-show="lastnameForm.lastName.$error.required"
+                  >Last Name is required.</small
+                >
+              </div>
+            </div>
+          </div>
+        </form>
+        <!-- Name Form Validation end -->
+      </div>
+
+      <div class="col-sm-6">
+        <!-- Address Form Validation start -->
+        <form name="checkoutShippingForm" role="form" novalidate>
+          <label for="title1" style="font-size: 20px;color: brown"
+            >Address Form Validation</label
+          ><br /><br />
+          <div class="row">
+            <div class="col-md-4">
+              <label for="txtAddress1">Address 1:</label>
+            </div>
+            <div class="col-md-8">
+              <input
+                type="text"
+                name="txtAddress1"
+                ng-model="txtAddress1"
+                required
+              />
+              <div
+                class="error"
+                ng-show="checkoutShippingForm.txtAddress1.$dirty && checkoutShippingForm.txtAddress1.$invalid"
+              >
+                <small
+                  class="error"
+                  ng-show="checkoutShippingForm.txtAddress1.$error.required"
+                  >An Address is required.</small
+                >
+              </div>
+            </div>
+          </div>
+          <br />
+        </form>
+
+        <form name="checkoutBillingForm" role="form" novalidate>
+          <div class="row">
+            <div class="col-md-4">
+              <label for="txtBillingAddress1">Billing Address 1:</label>
+            </div>
+            <div class="col-md-8">
+              <input
+                type="text"
+                name="txtBillingAddress1"
+                ng-model="txtBillingAddress1"
+                required
+              />
+              <div
+                class="error"
+                ng-show="checkoutBillingForm.txtBillingAddress1.$dirty && checkoutBillingForm.txtBillingAddress1.$invalid"
+              >
+                <small
+                  class="error"
+                  ng-show="checkoutBillingForm.txtBillingAddress1.$error.required"
+                  >An Address is required.</small
+                >
+              </div>
+            </div>
+          </div>
+        </form>
+        <!-- Address Form Validation end -->
+      </div>
+
+      <div class="container-fluid">
+        <div class="col-sm-12 text-center" style="margin-top: 80px">
+          <button
+            type="submit"
+            ng-click="submit();"
+            class="btn btn-warning"
+            style="padding:15px"
+          >
+            Submit
+          </button>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
